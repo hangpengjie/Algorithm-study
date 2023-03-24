@@ -15,39 +15,26 @@ using namespace std;
 class Solution {
 public:
     int countSubarrays(vector<int>& nums, int k) {
-        int pos = 0, n = nums.size();
-        for(int i=0; i<n; ++i){
-            if(nums[i] == k){
-                pos = i;
-                break;
-            }
-        }
+        int pos = find(nums.begin(),nums.end(), k) - nums.begin(), n = nums.size();
         unordered_map<int,int> lmap;
         lmap[0] = 1;
-        int t = 0;  // 平衡值
-        for(int i=pos-1; i>=0; --i){
-            if(nums[i] < k){
-                --t;
-            }else{
-                ++t;
-            }
+        // t表示平衡值
+        for(int i = pos-1,t = 0; i >= 0; --i){
+            if(nums[i] < k) --t;
+            else    ++t;
             ++lmap[t];
         }
-        t = 0;
         // 从pos开始枚举右端点
         int ans = 0;
-        for(int i=pos; i<n; ++i){
-            if(nums[i] < k){
-                --t;
-            }else if(nums[i] > k){
-                ++t;
-            }
-            if(lmap.count(-t+1)){
-                ans += lmap[-t+1];
-            }
-            if(lmap.count(-t)){
-                ans += lmap[-t];
-            }
+        for(int i = pos, t = 0; i < n; ++i){
+            if(nums[i] < k) --t;
+            else if(nums[i] > k)    ++t;
+            
+            ans += lmap[-t+1];
+
+           
+            ans += lmap[-t];
+
         }
         return ans;
 
