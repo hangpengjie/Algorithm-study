@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int a[100003]; double sum[100003];
-
+//https://www.acwing.com/problem/content/description/104/
 int main(){
     int n, f;
     double l = 0, r = 0;
