@@ -5,6 +5,7 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
+// 参考正解：https://leetcode.cn/problems/flower-planting-with-no-adjacent/solution/liang-chong-xie-fa-ha-xi-biao-shu-zu-wei-7hm8/
 // @lc code=start
 class Solution {
 public:
