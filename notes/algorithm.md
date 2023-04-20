@@ -3,6 +3,7 @@
 🔴 难度等级（不会做）
 
 😊会
+
 - [排序算法](#排序算法)
   - [快速排序](#快速排序)
   - [堆排序](#堆排序)
@@ -46,6 +47,10 @@
 - [换根DP](#换根dp)
   - [统计可能的树根数目](#统计可能的树根数目)
   - [Problem - 219D - Codeforces](#problem---219d---codeforces)
+- [求逆序对](#求逆序对)
+  - [暴力求解](#暴力求解)
+  - [归并排序](#归并排序)
+  - [树状数组](#树状数组)
 
 
 
@@ -1838,3 +1843,61 @@ int main() {
 
 ```
 
+
+
+# 求逆序对
+
+## 暴力求解
+
+略
+
+## 归并排序
+
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+// 107. 超快速排序
+// https://www.acwing.com/problem/content/109/
+// 归并排序求逆序对
+const int N = 500050;
+int a[N],b[N];
+long long  merge_sort(int l, int r)
+{
+    if(l >= r)  return 0;
+    int mid = (l + r) >> 1;
+    long long ans = merge_sort(l, mid) + merge_sort(mid+1, r); 
+    int i = l, j = mid+1, k = 0;
+    while (i <= mid && j <= r)
+    {
+        if(a[i] <= a[j])    b[k++] = a[i++];
+        else{
+            b[k++] = a[j++];
+            ans += mid - i + 1;	// [i,mid]中的每个值都比a[j]大 故应增加逆序对mid - i + 1个
+        }
+    }
+    while (i <= mid)    b[k++] = a[i++];
+    while (j <= r)  b[k++] = a[j++];
+    
+    for(i=l,j=0; i<=r; ++i,++j){
+        a[i] = b[j];
+    }
+    return ans;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    while (n)
+    {
+        for(int i=0; i<n; ++i)  cin>>a[i];  
+        cout<<merge_sort(0, n-1)<<endl;
+        cin>>n;
+    }
+}
+```
+
+
+
+## 树状数组
+
+// TODO
