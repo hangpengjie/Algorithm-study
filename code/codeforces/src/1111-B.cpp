@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+// B. Average Superhero Gang Power
 // https://mirror.codeforces.com/contest/1111/problem/B
 // 贪心算法 排序后从小到大依次删除每个数，记录最大值即可
 // 注意输出格式
