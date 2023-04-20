@@ -2,6 +2,9 @@
 using namespace std;
 // 108. 奇数码问题
 // https://www.acwing.com/problem/content/110/
+// 把二维数组展开成一维，将空格向上移动时，相当于某个数向他后面的n-1个数交换了位置，n-1是偶数所以逆序对的变化也只能是偶数
+// 逆序对数的奇偶性相同才能进行转换。
+// 结论的充分性不会证明。。。
 const int N = 505*505;
 int a[N],b[N],c[N];
 long long  merge_sort(int a[N],int b[N],int l, int r)
