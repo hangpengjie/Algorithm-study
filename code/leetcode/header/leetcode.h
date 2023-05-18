@@ -22,4 +22,26 @@ using namespace std;
         return; 
     }
 // END CUT
+
+// CUT
+// ST表
+int f[305][10];
+void st_prework(vector<int>& arr){
+    // arr从 0 开始 st表从 1 开始
+    int n = arr.size();
+    int t = log(n) / log(2) + 1;
+    memset(f,0,sizeof(f));
+    for(int i=1; i<=n; ++i) f[i][0] = arr[i-1];
+    for(int j=1; j<t; ++j){
+        for(int i=1; i<=n-(1<<j)+1; ++i){
+            f[i][j] = max(f[i][j-1],f[i+(1<<(j-1))][j-1]);  
+        }
+    }
+}
+int st_query(int l,int r){
+    int k = log(r-l+1) / log(2);
+    return max(f[l][k],f[r-(1<<k)+1][k]);
+}
+// END CUT
+    
 #endif
