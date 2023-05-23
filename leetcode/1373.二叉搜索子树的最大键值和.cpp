@@ -32,11 +32,6 @@ struct Z{int mn,mx,sum,ok;};
 class Solution {
 public:
     int ans = 0;
-    bool ok(TreeNode *root){
-        int left = root->left == nullptr ? INT32_MIN : root->left->val;
-        int right = root->right == nullptr ? INT32_MAX : root->right->val;
-        return root->val > left && root->val < right;
-    }
     Z dfs(TreeNode* root){
         if(root == nullptr) return {INT32_MAX, INT32_MIN, 0, 1};
         Z left = dfs(root->left);
