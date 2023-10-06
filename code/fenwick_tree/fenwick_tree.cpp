@@ -7,7 +7,6 @@ using namespace std;
 # define LL long long
 # define PII pair<int, int>
 
-
 // by hangpengjie
 // 见题 https://www.acwing.com/problem/content/243/
 
