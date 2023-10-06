@@ -8,7 +8,9 @@ using namespace std;
 # define PII pair<int, int>
 // by hangpengjie
 
-// 如题：https://www.acwing.com/problem/content/248/
+// 例题
+// 区间修改，单点查询 https://www.acwing.com/problem/content/248/
+// 区间修改，区间查询 https://www.acwing.com/problem/content/244/
 
 // START CUT
 // 区间修改，区间查询
