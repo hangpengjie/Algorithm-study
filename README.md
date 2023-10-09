@@ -18,7 +18,9 @@
 
 ## 子序列
 
--  [模板🍔] [最长上升子序列(LIS)](./code/subsequence/longest_increasing_subsequence.cpp) 最长上升子序列问题
+- [模板🍔] [最长上升子序列(LIS)](./code/subsequence/longest_increasing_subsequence.cpp) 最长上升子序列问题
+
+- [模板🍔] [最长公共子序列(LCS)](./code/subsequence/longest_common_subsequence.cpp) 最长公共子序列问题
 
 - [模板🍔] [最长公共上升子序列(LCIS)](./code/subsequence/longest_common_increasing_subsequence.cpp) 最长公共上升子序列问题
 
