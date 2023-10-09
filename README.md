@@ -17,6 +17,6 @@
 - [例题🍟] [线段树经典例题](./code/segment_tree/) 🧨🧨🧨
 
 ## 子序列
-- [模板🍔] [最长公共上升子序列](./code/subsequence/longest_common_increasing_subsequence.cpp)
+- [模板🍔] [最长公共上升子序列(LCIS)](./code/subsequence/longest_common_increasing_subsequence.cpp) 最长公共上升子序列问题
 
 - [例题🍟] [子序列经典例题](./code/subsequence/) 🥮🥮🥮
