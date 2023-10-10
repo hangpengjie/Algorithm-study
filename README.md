@@ -25,3 +25,7 @@
 - [模板🍔] [最长公共上升子序列(LCIS)](./code/subsequence/longest_common_increasing_subsequence.cpp) 最长公共上升子序列问题
 
 - [例题🍟] [子序列经典例题](./code/subsequence/) 🥮🥮🥮
+
+## 全排列
+
+- [例题🍟] [全排列经典例题](./code/full_arrangement/) ✨✨✨
