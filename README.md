@@ -38,7 +38,11 @@
 
 - [换根DP🍟] [换根DP例题](./code/dynamic_programming/replace_dp/) 换根DP一些经典题目 🥨🥨🥨
 
+- [背包DP🍟] [背包问题例题](./code/dynamic_programming/knapsack_dp/) 🌯🌯🌯
+
 - [前缀和优化的换根DP] [前缀最大值 | 后缀最大值 | 换根DP](./code/dynamic_programming/replace_dp/F_Minimum_Maximum_Distance.cpp) 🥙🥙🥙
+
+- [01背包] [背包基础 | 01背包](./code/dynamic_programming/knapsack_dp/278数字组合.cpp) 🥙🥙🥙
 
 
 ## 数学
