@@ -34,7 +34,12 @@
 
 ## 动态规划
 
-- [线性DP🍟] [线性DP例题](./code/dynamic_programming/liner_dp/)  一些interesting的线性DP题目 🥓🥓🥓                     
+- [线性DP🍟] [线性DP例题](./code/dynamic_programming/liner_dp/)  一些interesting的线性DP题目 🥓🥓🥓           
+
+- [换根DP🍟] [换根DP例题](./code/dynamic_programming/replace_dp/) 换根DP一些经典题目 🥨🥨🥨
+
+- [前缀和优化的换根DP] [前缀最大值 | 后缀最大值 | 换根DP](./code/dynamic_programming/replace_dp/F_Minimum_Maximum_Distance.cpp) 🥙🥙🥙
+
 
 ## 数学
 
