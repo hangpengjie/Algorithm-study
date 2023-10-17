@@ -52,3 +52,7 @@
 - [和为M的数组中不同的数字最多有sqrt(M)个] [数学知识 | 前缀和优化背包问题](./code/math/100029和带限制的子多重集合的数目.py)  🥙🥙🥙
 
 - [n个数相乘结果不变质因子总数也不会变] [数论 | 质因子问题](./code/math/D_Divide_and_Equalize.cpp) 🥙🥙🥙
+
+## 双链表
+
+- [一道很有意思的可以用双链表模拟的题] [双链表模拟删除字符](./code/double_linked_list/C_Decreasing_String.cpp) 🥙🥙🥙
