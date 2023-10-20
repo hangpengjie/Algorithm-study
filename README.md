@@ -53,6 +53,8 @@
 
 - [n个数相乘结果不变质因子总数也不会变] [数论 | 质因子问题](./code/math/D_Divide_and_Equalize.cpp) 🥙🥙🥙
 
+- [多数相乘因子个数计算] [gcd | 多个数相乘的因子总数可由质因子数量计算得到](./code/math/F_Vasilije_Loves_Number_Theory.cpp) 🥙🥙🥙
+
 ## 双链表
 
 - [一道很有意思的可以用双链表模拟的题] [双链表模拟删除字符](./code/double_linked_list/C_Decreasing_String.cpp) 🥙🥙🥙
