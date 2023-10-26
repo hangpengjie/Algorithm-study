@@ -58,3 +58,7 @@
 ## 双链表
 
 - [一道很有意思的可以用双链表模拟的题] [双链表模拟删除字符](./code/double_linked_list/C_Decreasing_String.cpp) 🥙🥙🥙
+
+## 归并排序
+
+- [归并排序求逆序对问题] [归并排序求逆序对](./code/merge_sort/2426满足不等式的数对数目.py)🥙🥙🥙
