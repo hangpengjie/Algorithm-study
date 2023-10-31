@@ -59,6 +59,8 @@
 
 - [容斥原理] [二分查找 | 容斥原理](./code/math/1201丑数III.py) 🥙🥙🥙
 
+- [整数拆分问题] [和为n的整数拆分成k个数求这k个数的乘积最大值](./code/math/Integer_Partition.md)🥙🥙🥙
+
 ## 双链表
 
 - [一道很有意思的可以用双链表模拟的题] [双链表模拟删除字符](./code/double_linked_list/C_Decreasing_String.cpp) 🥙🥙🥙
