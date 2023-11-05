@@ -78,3 +78,7 @@
 - [模板🍔] [寻找桥和割点Tarjan算法模板](./code/graph/bridge_and_vertex/bridge_and_vertex.py)
 
 - [例题🍟] [桥和割点例题](./code/graph/bridge_and_vertex/)🍿🍿🍿
+
+## 堆
+
+- [控制变量法] [n个司机有对应的speed和efficiency,找k个司机求speed的和与最低的efficiency的乘积最大值](./code/heap/1383最大的团队表现值.py)🥙🥙🥙
