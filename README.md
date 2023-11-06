@@ -61,6 +61,8 @@
 
 - [整数拆分问题] [和为n的整数拆分成k个数求这k个数的乘积最大值](./code/math/Integer_Partition.md)🥙🥙🥙
 
+- [1~n中质因子p的数量问题] [阶乘后的零](./code/math/793阶乘函数后K个零.py)🥙🥙🥙
+
 ## 双链表
 
 - [一道很有意思的可以用双链表模拟的题] [双链表模拟删除字符](./code/double_linked_list/C_Decreasing_String.cpp) 🥙🥙🥙
