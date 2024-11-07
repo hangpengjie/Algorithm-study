@@ -51,8 +51,8 @@ class SegmentTree {
  public:
   explicit SegmentTree(int n);
   explicit SegmentTree(const std::vector<T>& a);
-  void Update(int left, int right, T val);
-  SegmentTreeNode<T> Query(int left, int right);
+  void Update(int left, int right, T val); // add val to [left, right]
+  SegmentTreeNode<T> Query(int left, int right); // query [left, right]
 
  private:
   std::vector<SegmentTreeNode<T>> tr_;
