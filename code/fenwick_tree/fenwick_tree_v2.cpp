@@ -19,6 +19,7 @@ class FenwickTree {
   ~FenwickTree();
 
   T Ask(int x);  // Ask the sum of the elements in [1, x]
+  T Ask(int l, int r); // Ask the sum of the elements in [l, r]
   void Add(int x, T v);  // Add v to the element at index x
   void Update(int x, T v);  // Update the element at index x
 };
@@ -46,6 +47,10 @@ T FenwickTree<T>::Ask(int x) {
   return ans;
 }
 
+template <typename T>
+T FenwickTree<T>::Ask(int l, int r) {
+  return Ask(r) - Ask(l - 1);
+}
 template <typename T>
 void FenwickTree<T>::Add(int x, T v) {
   while (x < c_.size()) {
