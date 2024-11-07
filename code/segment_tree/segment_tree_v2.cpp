@@ -11,22 +11,39 @@ class SegmentTreeNode {
  public:
   int left, right;
   T lazy, sum, max_value;
-
-  SegmentTreeNode(int l, int r);
   SegmentTreeNode();
-  void PushUp(SegmentTreeNode& l, SegmentTreeNode& r);
+  void PushUp(const SegmentTreeNode& l, const SegmentTreeNode& r);
+  void PushDown(SegmentTreeNode& l, SegmentTreeNode& r);
+  void Update(T val);
 };
 
-template <typename T>
-SegmentTreeNode<T>::SegmentTreeNode(int l, int r) : left(l), right(r), lazy(0), sum(0), max_value(std::numeric_limits<T>::min()) {}
 
 template <typename T>
-SegmentTreeNode<T>::SegmentTreeNode() : left(0), right(0), lazy(0), sum(0), max_value(std::numeric_limits<T>::min()) {}
+SegmentTreeNode<T>::SegmentTreeNode() : left(0), right(0), lazy(0), sum(0), max_value(0) {}
 
 template <typename T>
-void SegmentTreeNode<T>::PushUp(SegmentTreeNode& l, SegmentTreeNode& r) {
+void SegmentTreeNode<T>::PushUp(const SegmentTreeNode& l, const SegmentTreeNode& r) {
   this->sum = l.sum + r.sum;
   this->max_value = std::max(l.max_value, r.max_value);
+}
+
+template <typename T>
+void SegmentTreeNode<T>::PushDown(SegmentTreeNode<T>& l, SegmentTreeNode<T>& r) {
+  int mid = (this->left + this->right) >> 1;
+  l.sum += this->lazy * (mid - this->left + 1);
+  r.sum += this->lazy * (this->right - mid);
+  l.max_value += this->lazy;
+  r.max_value += this->lazy;
+  l.lazy += this->lazy;
+  r.lazy += this->lazy;
+  this->lazy = 0;
+}
+
+template <typename T>
+void SegmentTreeNode<T>::Update(T val) {
+  this->sum += val * (this->right - this->left + 1);
+  this->max_value += val;
+  this->lazy += val;
 }
 
 template <typename T>
@@ -62,10 +79,9 @@ SegmentTree<T>::SegmentTree(const std::vector<T>& a) : a_(a), n_(a.size()), tr_(
 template <typename T>
 void SegmentTree<T>::Build(int left, int right, int node) {
   if (left == right) {
-    tr_[node] = SegmentTreeNode<T>(left, right);
-    tr_[node].sum = a_[left];
-    tr_[node].max_value = a_[left];
-    tr_[node].lazy = 0;
+    tr_[node].left = left;
+    tr_[node].right = right;
+    tr_[node].Update(a_[left]);
   } else {
     tr_[node].left = left;
     tr_[node].right = right;
@@ -85,14 +101,7 @@ void SegmentTree<T>::PushUp(int node) {
 template <typename T>
 void SegmentTree<T>::PushDown(int node) {
   if (tr_[node].lazy) {
-    int mid = (tr_[node].left + tr_[node].right) >> 1;
-    tr_[node * 2 + 1].sum += tr_[node].lazy * (mid - tr_[node].left + 1);
-    tr_[node * 2 + 2].sum += tr_[node].lazy * (tr_[node].right - mid);
-    tr_[node * 2 + 1].max_value += tr_[node].lazy;
-    tr_[node * 2 + 2].max_value += tr_[node].lazy;
-    tr_[node * 2 + 1].lazy += tr_[node].lazy;
-    tr_[node * 2 + 2].lazy += tr_[node].lazy;
-    tr_[node].lazy = 0;
+    tr_[node].PushDown(tr_[node * 2 + 1], tr_[node * 2 + 2]);
   }
 }
 
@@ -104,10 +113,7 @@ void SegmentTree<T>::Update(int left, int right, T val) {
 template <typename T>
 void SegmentTree<T>::Update(int left, int right, T val, int node) {
   if (left <= tr_[node].left && tr_[node].right <= right) {
-    tr_[node].sum += val * (tr_[node].right - tr_[node].left + 1);
-    tr_[node].max_value += val;
-    tr_[node].lazy += val;
-    return;
+    tr_[node].Update(val);
   } else {
     PushDown(node);
     int mid = (tr_[node].left + tr_[node].right) >> 1;
@@ -134,14 +140,14 @@ SegmentTreeNode<T> SegmentTree<T>::Query(int left, int right, int node) {
   } else {
     PushDown(node);
     int mid = (tr_[node].left + tr_[node].right) >> 1;
-    SegmentTreeNode<T> ans(left, right);
+    SegmentTreeNode<T> ans;
+    ans.left = left;
+    ans.right = right;
     if (left <= mid) {
-      auto l = Query(left, right, node * 2 + 1);
-      ans.PushUp(ans, l);
+      ans.PushUp(ans, Query(left, right, node * 2 + 1));
     }
     if (right > mid) {
-      auto r = Query(left, right, node * 2 +  2);
-      ans.PushUp(ans, r);
+      ans.PushUp(ans, Query(left, right, node * 2 +  2));
     }
     return ans;
   }
